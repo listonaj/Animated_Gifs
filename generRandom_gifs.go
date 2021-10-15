@@ -1,3 +1,6 @@
+// Run : go run generRandom_gifs > out.gif
+// the program create a gif in the same repertory
+
 package main
 
 import (
@@ -32,7 +35,7 @@ func random_gifs(out io.Writer) {
 	freq := rand.Float64() * 3.0 // relative frequency of y oscillator
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.0
-	for i :=0; i<nframes; i++{
+	for i :=0; i<nframes; i++ {
 		rect := image.Rect(0, 0, 2*size+1, 2*size+1)
 		img := image.NewPaletted(rect, color_palette)
 		for t:= 0.0; t < cycle*2*math.Pi; t+=resol{
